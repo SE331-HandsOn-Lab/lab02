@@ -33,10 +33,12 @@ const app = Vue.createApp({
     },
     computed: {
         title(){
-            return this.brand + ' ' + this.product
-            // if(this.variants[this.selectedVariant].quantity>0){
-            //     return this.brand + ' ' + this.product+' is on sale'
-            // }
+            if(this.onSale === false){
+                return this.brand + ' ' + this.product+' is not on sale'
+            }else{
+                return this.brand + ' ' + this.product+'  on sale'
+            }
+            
         },
         titleonsale(){
             return this.brand + ' ' + this.product+' is on sale'
